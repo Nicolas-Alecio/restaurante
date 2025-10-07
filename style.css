@@ -1,83 +1,154 @@
-body {
+* {
     margin: 0;
-    background-color: rgb(255, 255, 255);
+    padding: 0;
+    box-sizing: border-box;
 }
 
+body {
+    margin: 0;
+    background-color: #a20903;
+    font-family: Arial, sans-serif;
+}
+
+/* Header */
 header {
-    background-color: #ffffff;
-    color: rgb(0, 0, 0);
+    background-color: #a20903;
+    color: #000;
     display: flex;
     justify-content: space-evenly;
+    align-items: center;
     padding: 1em;
     flex-wrap: wrap;
 }
+
+/* Logo */
 .logo {
-    font-size: 2em;
+    font-size: 3em;
     font-weight: bold;
-    color: rgb(216, 35, 35);
+    color: rgb(255, 0, 0);
 }
+
+/* Navegação */
 nav a {
-
-    color: rgb(216, 35, 35);
+    color: rgb(173, 27, 27);
     text-decoration: none;
-     margin-left: 40px;
-     font-size: 1.2em;
+    margin-left: 40px;
+    font-size: 1.2em;
+    transition: color 0.3s ease;
 }
 
-.banner {
-    background: url('https://img.pikbest.com/backgrounds/20191221/chinese-style-dragon-and-phoenix-background-template_1908322.jpg!sw800') center/cover;  
-    height: 780px;
+nav a:hover {
+    color: #fff;
 }
-.section-tittle {
-    font-size: 1.8em;
+
+/* Banner */
+.banner {
+    background: url('IMG/a.png') center/cover no-repeat;
+    height: 100vh;
+    width: 100%; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-size: cover; /* Garante que a imagem de fundo cubra a área do banner sem distorcer */
+}
+
+/* Título das seções */
+.section-title {
+    font-size: 2em;
     padding: 20px;
-    font-family: "Mozilla Headline", sans-serif;
-    color: rgb(0, 0, 0);
+    font-family: Arial, sans-serif;
+    color: #fff;
     text-align: center;
 }
+
+/* Grid de pratos */
 .food-grid {
-  
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(330px, 1fr));
-  gap: 10px;
-  padding: 0 10px 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(330px, 1fr));
+    gap: 20px;
+    padding: 0 20px 40px;
 }
+
+/* Cartões de comida */
 .food-card {
     background-color: rgb(181, 38, 38);
     border-radius: 10px;
     text-align: center;
     position: relative;
     overflow: hidden;
+    transition: transform 0.3s ease, background-color 0.3s ease;
 }
 
-  .food-card:hover {
-         background-color: rgb(216, 57, 91);
-         scale: 1.12;
-         cursor: pointer;
+.food-card:hover {
+    background-color: rgb(216, 57, 91);
+    transform: scale(1.05);
+    cursor: pointer;
 }
+
 .food-card img {
-    height: 450px;
-    width: 100%;
-    object-fit: cover;
+        height: 450px; 
+        width: 100%;   
+        object-fit: cover; 
+        border-top-left-radius: 10px; 
+        border-top-right-radius: 10px;
+    
 }
-.food-card h3 {
-    font-family: "Mozilla Headline", sans-serif;
-    font-size: 20px;
-    margin: 20 0 10;
+
+/* Nome do prato */
+.food-card h2 {
+    font-size: 1.4em;
+    color: #fff;
+    margin: 20px 0 10px;
 }
+
+/* Avaliação */
 .rating {
     position: absolute;
     top: 10px;
     left: 10px;
-    background-color: rgb(255, 0, 0);
+    background-color: #ff0000;
     color: white;
-    padding: 10px 8px;
+    padding: 8px 10px;
     border-radius: 4px;
-    font-size: 0.7em;
+    font-size: 0.8em;
 }
-.food-card h2 {
+
+/* Preço */
+.price {
     display: block;
-    font-size: 1em;
-    color: #111;
-    margin-bottom: 20px;
+    font-size: 1.1em;
+    font-weight: bold;
+    color: #fff;
+    margin-bottom: 10px;
+}
+
+/* Descrição */
+.description {
+    font-size: 0.95em;
+    padding: 0 15px 20px;
+    color: #f0f0f0;
+}
+
+/* Responsividade extra */
+@media (max-width: 600px) {
+    .logo {
+        font-size: 2em;
+        text-align: center;
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    nav {
+        text-align: center;
+        width: 100%;
+    }
+
+    nav a {
+        display: inline-block;
+        margin: 10px 15px;
+    }
+
+    .banner {
+        height: 300px; /* Reduz a altura do banner em telas pequenas */
+    }
 }
